@@ -1,0 +1,125 @@
+@mixin container() {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @media (min-width: $tablet-width) {
+    padding: 0 30px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 0 110px;
+  }
+}
+
+@mixin list() {
+  padding: 0;
+  list-style: none;
+}
+
+@mixin before-after-bg($url) {
+  background-image: $url;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin flex-column($align, $justify) {
+  display: flex;
+  flex-direction: column;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin flex-row($justify, $align) {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin promo-background($url-img) {
+  background-image: linear-gradient(to right, rgba(13, 27, 42, 0.8) 80%, rgba(13, 27, 42, 0.8) 20%), $url-img;
+
+  background-size: cover, cover;
+  background-repeat: no-repeat, no-repeat;
+}
+
+@mixin fieldset-style() {
+  border: none;
+  padding: 0;
+}
+
+@mixin input-text($color) {
+  font-size: 12px;
+  line-height: 1.13;
+  color: $color;
+
+  @media (min-width: $tablet-width) {
+    line-height: 1.5;
+    font-size: 14px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 18px;
+  }
+}
+
+@mixin input-box() {
+  height: 23px;
+  width: 100%;
+  padding: 5px 10px;
+  border: $input-border;
+
+  @media (min-width: $tablet-width) {
+    height: 20px;
+  }
+
+  @media (min-width: $desktop-width) {
+    height: 30px;
+  }
+}
+
+@mixin modal-box() {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1100;
+
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+
+  padding-top: 100px;
+
+  text-align: center;
+
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+@mixin modal-wrapper($border-color) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $white;
+  border: $border-color;
+
+  padding-bottom: 10px;
+
+  @media (min-width: $tablet-width) {
+    max-width: 60%;
+    margin: 0 auto;
+
+    padding-bottom: 30px;
+  }
+}
+
+@mixin modal-message() {
+  position: relative;
+  font-size: 1.5em;
+  font-weight: 700;
+
+  @media (min-width: $tablet-width) {
+    width: 70%;
+  }
+}

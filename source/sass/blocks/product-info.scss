@@ -1,0 +1,23 @@
+.product-info__description {
+   @include flex-row(space-between, center);
+
+   margin: 0;
+}
+
+.product-info__description {
+   margin-inline-start: 0;
+}
+
+.product-info__value {
+   margin-inline-start: 0;
+   font-weight: 600;
+   font-size: 18px;
+
+   @media (min-width: $tablet-width) {
+      font-size: 22px;
+   }
+
+   @media (min-width: $desktop-width) {
+      font-size: 30px;
+   }
+}

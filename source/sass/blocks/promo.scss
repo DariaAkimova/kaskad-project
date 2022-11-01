@@ -1,0 +1,63 @@
+.promo {
+  min-height: 150px;
+  @include flex-column(center, space-between);
+  padding: 15px 25px;
+
+  @include promo-background(url("../../img/background-mobile@1x.jpg"));
+  @media (min-resolution: 2dppx) {
+    @include promo-background(url("../../img/background-mobile@2x.jpg"));
+  }
+
+  @media (min-width: $tablet-width) {
+    min-height: 170px;
+    @include flex-column(flex-start, space-between);
+
+    padding: 20px 30px;
+
+    @include promo-background(url("../../img/background-tablet@1x.jpg"));
+
+    @media (min-resolution: 2dppx) {
+      @include promo-background(url("../../img/background-tablet@2x.jpg"));
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    min-height: 330px;
+    padding: 35px 50px;
+
+    @include promo-background(url("../../img/background-desktop@1x.jpg"));
+
+    @media (min-resolution: 2dppx) {
+      @include promo-background(url("../../img/background-deskto@2x.jpg"));
+    }
+  }
+}
+
+.promo__title {
+  text-align: center;
+  line-height: 1.5;
+
+  color: $white;
+  font-size: 16px;
+  letter-spacing: 0.8px;
+  text-transform: none;
+
+  @media (min-width: $tablet-width) {
+    margin: 0;
+    padding-right: 100px;
+    font-size: 24px;
+    text-align: left;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 40px;
+  }
+}
+
+.promo__button {
+  @media (min-width: $tablet-width) {
+  }
+
+  @media (min-width: $desktop-width) {
+  }
+}

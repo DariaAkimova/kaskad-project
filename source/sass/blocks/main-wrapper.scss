@@ -1,0 +1,8 @@
+.main-wrapper {
+@include flex-column (flex-start, space-between);
+
+@media (min-width: $desktop-width) {
+    @include flex-row (space-between, flex-start);
+    flex-wrap: nowrap;
+}
+}

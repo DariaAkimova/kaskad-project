@@ -1,0 +1,9 @@
+.sale-card-title {
+  font-size: 14px;
+  color: $grey-blue;
+  font-weight: bold;
+
+  @media (min-width: $desktop-width) {
+    font-size: 18px;
+  }
+}

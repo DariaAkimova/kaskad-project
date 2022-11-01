@@ -1,0 +1,37 @@
+.success {
+  position: relative;
+
+  background-color: $dark-blue;
+
+  color: inherit;
+  z-index: 10;
+}
+
+.success__message {
+  position: relative;
+
+  @include flex-row(flex-start, center);
+
+  @media (min-width: $desktop-width) {
+    font-size: 24px;
+  }
+
+  &::after {
+    position: relative;
+    content: "";
+
+    width: 40px;
+    height: 40px;
+
+    margin-left: 10px;
+
+    @include before-after-bg(url("../../img/plane-icon.svg"));
+
+    animation: fly-to-top 1s ease-in forwards;
+
+    @media (min-width: $desktop-width) {
+      width: 60px;
+      height: 60px;
+    }
+  }
+}

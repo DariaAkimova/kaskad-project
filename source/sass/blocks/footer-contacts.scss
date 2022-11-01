@@ -1,0 +1,43 @@
+.footer-contacts__title {
+  grid-column: 1/-1;
+
+  margin-top: 0;
+
+  font-size: 16px;
+
+  @media (min-width: $desktop-width) {
+    font-size: 18px;
+  }
+}
+
+.footer-contacts__info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 12px;
+
+  font-size: 12px;
+
+  @media (min-width: $tablet-width) {
+    grid-template-columns: 1fr;
+
+    row-gap: 15px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 18px;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.footer-contacts__adress {
+  grid-column: 2/3;
+  grid-row: 1/-1;
+
+  @media (min-width: $tablet-width) {
+    grid-column: 1/2;
+    grid-row: -2/-1;
+  }
+}

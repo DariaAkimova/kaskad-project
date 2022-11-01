@@ -1,0 +1,43 @@
+.personal-agree {
+  @include fieldset-style();
+}
+
+.personal-agree__field {
+  @include flex-row (flex-start, center);
+  flex-wrap: nowrap;
+
+  margin: 5px 0 10px;
+}
+
+.personal-agree__checkbox {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "*";
+    left: 100%;
+    top: -6px;
+    color: $white;
+
+    @media (min-width: $tablet-width) {
+      top: -5px;
+    }
+
+    @media (min-width: $desktop-width) {
+      top: -8px;
+    }
+  }
+}
+
+.personal-agree__label {
+  margin: 0 10px 5px;
+  font-size: 10px;
+
+  @media (min-width: $desktop-width) {
+    font-size: 14px;
+  }
+}
+
+.personal-agree__link {
+  text-decoration: underline;
+}

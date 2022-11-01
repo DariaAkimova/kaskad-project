@@ -1,0 +1,30 @@
+.main-container {
+  width: 100%;
+  // grid-column: 1/2;
+  // grid-row: 3/4;
+
+  @media (min-width: $desktop-width) {
+    // grid-column: 2/-1;
+    // grid-row: 2/3;
+    
+
+  //   .container {
+  //     padding-left: 65px;
+  // }
+
+}
+}
+
+
+.main-container__section {
+  margin-bottom: 53px;
+
+ @media (min-width: $tablet-width) {
+    margin-bottom: 75px;
+  }
+
+ @media (min-width: $desktop-width) {
+    margin-bottom: 105px;
+    margin-right: 100px; /* таким образом отдаляем main от aside */
+  }
+}

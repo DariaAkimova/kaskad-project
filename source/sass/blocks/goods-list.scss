@@ -1,0 +1,44 @@
+.goods-list {
+    @include list();
+}
+
+.goods-list__item {
+    position: relative;
+
+    padding-left: 15px;
+
+    &:not(:first-child) {
+        margin-top: 3px;
+    }
+
+    @media (min-width: $tablet-width) {
+        padding-left: 25px;
+    }
+
+    @media (min-width: $desktop-width) {
+        margin-top: 5px;
+    }
+
+    &::before {
+        position: absolute;
+        content: " ";
+        top: 5px;
+        left: 0;
+
+        width: 10px;
+        height: 10px;
+
+        background-image: url("../../img/arrow-icon.svg");
+        background-size: contain;
+
+        @media (min-width: $tablet-width) {
+            width: 15px;
+            height: 15px;
+        }
+
+        
+        @media (min-width: $desktop-width) {
+          top: 7px;
+        }
+    }
+}

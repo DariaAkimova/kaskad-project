@@ -1,0 +1,39 @@
+$font-ubuntu: "Ubuntu", "Arial", sans-serif;
+$font-open-sans: "Open Sans", "Arial", sans-serif;
+$font-arial: "Arial", sans-serif;
+
+
+$black: #000000;
+$grey-blue: #1B262B;
+$dark-blue: #0B1D2A;
+$white: #ffffff;
+$basic-blue: #778DA9;
+$basic-blue-dark: #415A77;
+$yellow: #FFB703;
+$grey: #444444;
+$super-dark-grey: #222222;
+$light-grey: #d9d9d9;
+$error-color: #ff8282;
+
+$page-background-color: $white;
+$page-text-color: $dark-blue;
+
+$menu-background-color: $basic-blue;
+$menu-active-color: $basic-blue-dark;
+
+$button-color: $white;
+
+$input-border: 1px solid $light-grey;
+
+// hover, focus любые элементы
+
+$hover-border: 2px solid $basic-blue;
+$focus-border: 2px solid  $basic-blue-dark;
+$error-border: 2px solid $error-color;
+
+// Viewports
+
+$tablet-width: 768px;
+$desktop-width: 1340px;
+$mobile-width-only: 767px;
+$tablet-width-only: 1339px;

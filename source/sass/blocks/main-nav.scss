@@ -1,0 +1,128 @@
+.main-nav {
+  width: 100%;
+
+  background-color: $basic-blue;
+
+  @include flex-row(space-between, center);
+
+  @media (max-width: $mobile-width-only) {
+    padding: 0 14px;
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .main-nav--closed .main-nav__list {
+    display: none;
+  }
+
+  .main-nav--opened {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    background-color: $menu-background-color;
+  }
+
+  .main-nav__list {
+    @media (max-width: $mobile-width-only) {
+      min-height: 100px;
+    }
+  }
+}
+
+.main-nav.no-js .main-nav__toggle {
+  display: none;
+}
+
+.main-nav__list {
+  grid-column: 1/-1;
+  grid-row: 2/3;
+
+  @include list();
+  margin: 0;
+
+  @media (max-width: $mobile-width-only) {
+    margin-top: 6px;
+  }
+
+  @media (min-width: $tablet-width) {
+    @include flex-row(space-between, center);
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 25px 0 18px;
+    margin-bottom: 0;
+  }
+}
+
+.main-nav__toggle {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  // margin-left: 90px;
+  // position: absolute;
+  // top: 0;
+  // right: 20px;
+  // z-index: 10;
+  display: block;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: transparent;
+
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+}
+
+.main-nav--opened {
+  .main-nav__toggle {
+    top: -39px;
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      z-index: 10;
+      top: 7px;
+      left: 0;
+      width: 25px;
+      height: 2px;
+      background-color: $black;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+      box-shadow: none;
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.main-nav--closed .main-nav__toggle {
+  // top: 23px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background-color: $black;
+    box-shadow: 0 8px 0 0 $black, 0 16px 0 0 $black;
+  }
+}
+
+.main-nav__btn {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  align-self: end;
+
+  margin: 6px 0;
+}

@@ -1,0 +1,11 @@
+.form-field {
+   @include flex-column(flex-start, flex-start);
+
+   padding-bottom: 10px;
+
+   width: 100%;
+
+   @media (min-width: $desktop-width) {
+      padding-bottom: 20px;
+   }
+}

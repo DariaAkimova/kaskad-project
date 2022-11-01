@@ -1,0 +1,19 @@
+.aside {
+   order: -1;
+
+@media (min-width: $desktop-width) {
+   order: 1;
+}
+}
+
+.aside__promo {
+    margin-bottom: 45px;
+}
+
+/* добавить, когда будет мобильное меню */
+
+// .aside.no-js {
+//     @media (max-width: $mobile-width-only) {
+//        padding-top: 230px;
+//      }
+//    }

@@ -1,0 +1,9 @@
+.form-label {
+    color: $white;
+    font-weight: bold;
+    font-size: 12px;
+
+    @media (min-width: $desktop-width) {
+        font-size: 18px;
+          }
+}

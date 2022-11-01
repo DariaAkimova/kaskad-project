@@ -1,0 +1,18 @@
+.section-title {
+  font-family: $font-ubuntu;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: -1.2px;
+  line-height: 1;
+
+text-transform: uppercase;
+
+  @media (min-width: $tablet-width) {
+    font-size: 24px;
+    letter-spacing: -2px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 50px;
+  }
+}

@@ -1,0 +1,13 @@
+.buttons-wrapper {
+  @include flex-column(center, center);
+
+  width: 100%;
+
+  @media (min-width: $tablet-width) {
+    @include flex-row(space-between, center);
+  }
+
+  @media (min-width: $desktop-width) {
+    @include flex-row(flex-start, center);
+  }
+}

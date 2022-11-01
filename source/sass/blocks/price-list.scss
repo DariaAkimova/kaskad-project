@@ -1,0 +1,51 @@
+.price-list__list {
+    @include list();
+}
+
+.price-list__item {
+    &:not(:last-child) {
+        margin-bottom: 12px;
+
+        @media (min-width: $desktop-width) {
+            margin-bottom: 18px;
+        }
+    }
+}
+
+.price-list__download-link {
+    position: relative;
+    @include flex-row(flex-start, center);
+
+    font-weight: 600;
+
+    &::after {
+        position: relative;
+        content: "";
+
+        width: 15px;
+        height: 15px;
+
+        margin-left: 7px;
+
+        background: url("../../img/download-icon.svg") no-repeat;
+        background-size: cover;
+
+        @media (min-width: $desktop-width) {
+            width: 20px;
+            height: 20px;
+
+            margin-left: 20px;
+        }
+    }
+
+    &:hover {
+        &::after {
+            animation: up-down 1s infinite;
+        }
+    }
+
+    &:active,
+    &:focus {
+        color: $grey;
+    }
+}

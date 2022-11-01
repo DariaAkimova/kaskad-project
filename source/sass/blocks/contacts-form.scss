@@ -1,0 +1,21 @@
+.contacts-form {
+  @include fieldset-style();
+
+  @include flex-column(flex-start, space-between);
+
+  @media (min-width: $tablet-width) {
+    @include flex-row(space-between, flex-start);
+  }
+}
+
+.contacts-form__field {
+  margin-bottom: 10px;
+
+  @media (min-width: $tablet-width) {
+    max-width: 200px;
+  }
+}
+
+.contacts-form__input {
+  width: 100%;
+}

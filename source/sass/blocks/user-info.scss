@@ -1,0 +1,17 @@
+.user-info {
+  @include fieldset-style();
+}
+
+.user-info__field {
+  @include input-text($white);
+
+  letter-spacing: -0.3px;
+}
+
+.user-info__input {
+  flex-grow: 1;
+
+  @media (min-width: $tablet-width) {
+    letter-spacing: -0.6px;
+  }
+}
