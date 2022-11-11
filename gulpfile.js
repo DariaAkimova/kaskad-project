@@ -1,7 +1,7 @@
 import gulp from "gulp";
 import plumber from "gulp-plumber";
-import dartSass from 'sass';
-import gulpSass from 'gulp-sass';
+import dartSass from "sass";
+import gulpSass from "gulp-sass";
 import postcss from "gulp-postcss";
 import csso from "postcss-csso";
 import rename from "gulp-rename";
@@ -31,27 +31,11 @@ export const styles = () => {
     .pipe(browser.stream());
 };
 
-
-// export const styles = () => {
-//   return gulp
-//     .src("source/sass/style.scss", { sourcemaps: true })
-//     .pipe(plumber())
-//     .pipe(sass())
-//     .pipe(gulp.dest("build/css", { sourcemaps: "." }))
-//     .pipe(browser.stream());
-// };
-
 //html
 
 const html = () => {
   return gulp
     .src("source/*.html")
-    // .pipe(
-    //   fileinclude({
-    //     prefix: "@@",
-    //     basepath: "@file",
-    //   })
-    // )
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest("build"));
 };
@@ -79,13 +63,6 @@ const scripts = () => {
     .pipe(webpack(webpackConfig))
     .pipe(gulp.dest("build/js"));
 };
-
-// export const scripts = () => {
-//   return gulp
-//     .src("source/js/script.js")
-//     .pipe(rename('script.bundle.js'))
-//     .pipe(gulp.dest("build/js"));
-// };
 
 //php
 
@@ -147,9 +124,17 @@ const sprite = () => {
 
 const copy = (done) => {
   gulp
-    .src(["source/fonts/*.{woff2,woff}", "source/*.php", "source/*.ico", "source/xls/*.*"], {
-      base: "source",
-    })
+    .src(
+      [
+        "source/fonts/*.{woff2,woff}",
+        "source/*.php",
+        "source/*.ico",
+        "source/xls/*.*",
+      ],
+      {
+        base: "source",
+      }
+    )
     .pipe(gulp.dest("build"));
   done();
 };
@@ -191,12 +176,12 @@ const watcher = () => {
 
 //Build
 
-// export const build = gulp.series(
-//   clean,
-//   copy,
-//   optimizeImages,
-//   gulp.parallel(styles, html, scripts, svg, sprite, createWebp)
-// );
+export const build = gulp.series(
+  clean,
+  copy,
+  optimizeImages,
+  gulp.parallel(styles, html, scripts, svg, sprite, createWebp)
+);
 
 // Default
 
@@ -207,12 +192,3 @@ export default gulp.series(
   gulp.parallel(styles, html, scripts, svg, sprite, createWebp),
   gulp.series(server, watcher)
 );
-
-
-// export default gulp.series(
-//   clean,
-//   copy,
-//   copyImages,
-//   gulp.parallel(styles, html),
-//   gulp.series(server, watcher)
-// );
