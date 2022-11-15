@@ -28,16 +28,15 @@
   }
 
   &:hover {
-    border: 1px solid $hover-border;
+    border: $hover-border;
   }
 
   &:focus {
-    border: 1px solid $focus-border;
+    border: $focus-border;
   }
 
   &:active {
     background: $basic-blue-dark;
-    color: fade($white, 30);
   }
 
   &--secondary {
@@ -48,17 +47,11 @@
     font-size: 12px;
   }
 
-  &--secondary:hover {
-    background: $light-grey;
-    color: $dark-blue;
-  }
-
   &:focus {
-    border: 1px solid $focus-border;
+    border: $focus-border;
   }
 
   &--secondary:active {
-    background: $light-grey;
-    color: fade($grey, 30);
+   opacity: 0.8;
   }
 }
