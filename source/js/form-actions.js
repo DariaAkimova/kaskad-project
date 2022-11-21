@@ -15,7 +15,7 @@ const errorMessage = errorMessageFragment.querySelector(".error");
 const closeMessage = () => {
   if (document.body.lastChild === errorMessage) {
     closeErrorMessage();
-  } else if (form.firstChild === successMessage) {
+  } else if (form.lastChild === successMessage) {
     closeSuccessMessage();
   }
 };
@@ -59,7 +59,7 @@ const showErrorMessage = () => {
 const clearAll = () => form.reset();
 
 const showSuccessMessage = () => {
-  form.prepend(successMessage);
+  form.appendChild(successMessage);
   clearAll();
   addListenerClick();
   addListenerEscKeydown();
