@@ -28,7 +28,7 @@
     @include promo-background(url("../../img/background-desktop@1x.jpg"));
 
     @media (min-resolution: 2dppx) {
-      @include promo-background(url("../../img/background-deskto@2x.jpg"));
+      @include promo-background(url("../../img/background-desktop@2x.jpg"));
     }
   }
 }

@@ -22,6 +22,7 @@
 
     @media (min-width: $desktop-width) {
         min-height: 70px;
+        order: 2;
     }
 }
 
@@ -67,7 +68,7 @@
     }
 
     &--adress {
-        margin-left: 40px;
+        margin-right: 40px;
         @media (max-width: $tablet-width-only) {
             display: none;
         }
