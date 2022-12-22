@@ -1,3 +1,32 @@
 .promo-list {
     @include list();
+    @include flex-column(center, start);
+
+    @media (min-width: $tablet-width) and (max-width: $tablet-width-only) {
+        @include flex-row(space-between, center);
+    }
+}
+
+.promo-list__item {
+  
+    min-height: 180px;
+    &:not(:last-child) {
+        margin-bottom: 40px;
+    }
+
+    @media (max-width: $mobile-width-only) {
+        width: 100%;
+    }
+
+    @media (min-width: $tablet-width) and (max-width: $tablet-width-only) {
+        margin-bottom: 20px;
+       &:not(:last-child) {
+       
+        margin-right: 40px;
+    }
+    }
+
+    @media (min-width: $desktop-width) {
+        min-height: 460px;
+    }
 }
