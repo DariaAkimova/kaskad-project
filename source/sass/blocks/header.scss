@@ -10,7 +10,6 @@
 
   .container {
     @include flex-column(stretch, center);
-    margin-bottom: 25px;
   }
 }
 

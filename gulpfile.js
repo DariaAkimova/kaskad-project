@@ -32,12 +32,14 @@ export const styles = () => {
 
 //html
 
-const html = () => {
-  return gulp
-    .src("source/*.html")
-    .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest("build"));
-};
+// const html = () => {
+//   return (
+//     gulp
+//       .src("source/*.html")
+//       .pipe(htmlmin({ collapseWhitespace: true }))
+//       .pipe(gulp.dest("build"))
+//   );
+// };
 
 //scripts
 
@@ -127,6 +129,7 @@ const copy = (done) => {
       [
         "source/fonts/*.{woff2,woff}",
         "source/*.php",
+        "source/*/*.php",
         "source/*.ico",
         "source/xls/*.*",
       ],
@@ -179,7 +182,7 @@ export const build = gulp.series(
   clean,
   copy,
   optimizeImages,
-  gulp.parallel(styles, html, scripts, svg, sprite, createWebp)
+  gulp.parallel(styles, scripts, svg, sprite, createWebp)
 );
 
 // Default
@@ -188,6 +191,6 @@ export default gulp.series(
   clean,
   copy,
   copyImages,
-  gulp.parallel(styles, html, scripts, svg, sprite, createWebp),
+  gulp.parallel(styles, scripts, svg, sprite, createWebp),
   gulp.series(server, watcher)
 );
